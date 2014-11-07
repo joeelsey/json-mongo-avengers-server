@@ -61,7 +61,7 @@ module.exports = function(app) {
     avenger.name = req.body.name;
     avenger.save(function(err,data) {
       if (err) return res.status(500).send(err);
-      res.status(200).json(data);
+      res.json(data);
     });
   });
 
