@@ -15,14 +15,14 @@ describe('basic avengers test', function(){
     .send({msg: 'avenger created'})
     .end(function(err, res){
       expect(err).to.eql(null);
-      expect(res.body.msg).to.eql('avenger created');
-      //expect(res.body).to.have.property('_id');
+      //expect(res.body.msg).to.eql('avenger created');
+      expect(res.body).to.have.property('_id');
       id = res.body.name;
       done();
     });
   });
 
-  it('should be able to get all of the avengers to assemble', function(done){
+  it('should be able to get all of the avengers', function(done){
     chai.request('http://localhost:3000')
     .get('/avengers')
     .end(function(err,res){
@@ -32,7 +32,7 @@ describe('basic avengers test', function(){
     });
   });
 
-  it('should be able to summon a single avenger', function(done){
+  it('should be able to get a single avenger', function(done){
     chai.request('http://localhost:3000')
       .get('/avengers/' + id)
       .end(function(err,res){
@@ -49,18 +49,20 @@ describe('basic avengers test', function(){
       .send({msg: 'avenger updated'})
       .end(function(err,res){
         expect(err).to.eql(null);
+        //res.body.msg causes deeply equals error.
         expect(msg).to.eql('avenger updated');
         done();
     });
   });
 
-  it('should be able to crush an avenger', function(done){
+  it('should be able to delete an avenger', function(done){
     var msg = 'avenger destroyed';
     chai.request('http://localhost:3000')
       .delete('/avengers/' + id)
       .send({ msg: 'avenger destroyed!' })
       .end(function(err,res){
         expect(err).to.be.eql(null);
+        //res.body.msg causes deeply equals error.
         expect(msg).to.eql('avenger destroyed');
         done();
     });

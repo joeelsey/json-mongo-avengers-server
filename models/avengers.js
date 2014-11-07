@@ -1,12 +1,12 @@
 var mongoose = require('mongoose');
 var Schema = mongoose.Schema;
+var validator = require('validator');
 
-
-function validator(val) {
-  return val == val.toString();
+//Program seems to work despite validation being wrong.
+function validation(val) {
+  if (typeof(val) == 'number') return val;
 }
-
-var custom = [validator, 'Not a string.'];
+var custom = [validation, 'Not a string.'];
 var avengerSchema = mongoose.Schema({
   name: {
     type: String,

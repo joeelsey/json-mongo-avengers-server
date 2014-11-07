@@ -59,12 +59,9 @@ module.exports = function(app) {
   app.post('/avengers', function(req, res) {
     var avenger = new Avenger();
     avenger.name = req.body.name;
-    console.log(typeof(req.body.name));
-    avenger.save(function(err) {
-      if (err) return res.status(500).send('error');
-      res.json({
-        msg: 'avenger created'
-      });
+    avenger.save(function(err,data) {
+      if (err) return res.status(500).send(err);
+      res.status(200).json(data);
     });
   });
 
