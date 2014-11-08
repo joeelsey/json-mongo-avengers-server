@@ -1,6 +1,9 @@
 {
   "name": "avengersjson",
   "version": "1.0.0",
+  "engines":{
+    "node": "0.10.x"
+    },
   "description": "database of avengers",
   "main": "server.js",
   "scripts": {
@@ -12,7 +15,8 @@
     "body-parser": "^1.9.2",
     "express": "^4.10.1",
     "mongoose": "^3.8.18",
-    "validator": "^3.22.1"
+    "validator": "^3.22.1",
+    "pg" : "3.x"
   },
   "devDependencies": {
     "chai": "^1.9.2",
