@@ -10,8 +10,8 @@ mongoose.connect('mongodb://ec2-54-243-42-236.compute-1.amazonaws.com/ddrq6viktq
 
 require('./routes/avenger_routes')(app);
 
-//app.set('port', 3000);
-app.set('port', 5432);
+//app.set('port',process.env.PORT || 3000);
+app.set('port',process.env.PORT || 5432);
 app.listen(app.get('port'), function() {
   console.log('server running on port: ' + app.get('port'));
 });
