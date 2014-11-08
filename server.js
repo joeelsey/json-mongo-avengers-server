@@ -4,7 +4,7 @@ var mongoose = require('mongoose');
 var pg = require('pg');
 
 
-mongoose.connect('mongodb://ec2-54-243-42-236.compute-1.amazonaws.com/ddrq6viktq67e9');
+mongoose.connect('ec2-54-243-42-236.compute-1.amazonaws.com/ddrq6viktq67e9');
 
 //mongoose.connect(process.env.MONGO_URL || 'mongodb://localhost/avengers_dev')
 
