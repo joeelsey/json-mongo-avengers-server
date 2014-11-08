@@ -6,7 +6,7 @@ var pg = require('pg');
 var url = process.env.MONGOHQ_URL || process.env.MONGOLAB_URI || 'mongodb://ec2-54-243-42-236.compute-1.amazonaws.com/ddrq6viktq67e9';
 mongoose.connect(url);
 
-//mongoose.connect(process.env.MONGO_URL || 'mongodb://localhost/avengers_dev');
+///mongoose.connect(process.env.MONGO_URL || 'mongodb://localhost/avengers_dev');
 
 require('./routes/avenger_routes')(app);
 
