@@ -3,8 +3,7 @@ var app = express();
 var mongoose = require('mongoose');
 var pg = require('pg');
 
-var url = process.env.MONGOLAB_URL || process.env.MOGOHQ_URL || process.env.MONGO_URL ||
-'mongodb://ec2-54-243-42-236.compute-1.amazonaws.com/ddrq6viktq67e9';
+var url = 'mongodb://ec2-54-243-42-236.compute-1.amazonaws.com';
 mongoose.connect(url);
 
 //mongoose.connect(process.env.MONGO_URL || 'mongodb://localhost/avengers_dev');
