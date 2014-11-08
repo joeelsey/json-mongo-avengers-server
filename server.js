@@ -12,7 +12,7 @@ mongoose.connect(url);
 require('./routes/avenger_routes')(app);
 
 //app.set('port',process.env.PORT || 3000);
-app.set('port',process.env.PORT || 5432);
+app.set('port', 5432);
 app.listen(app.get('port'), function() {
   console.log('server running on port: ' + app.get('port'));
 });
