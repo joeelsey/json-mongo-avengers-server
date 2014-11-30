@@ -6,11 +6,8 @@ module.exports = function(grunt){
     jshint: {
       options: {
         node: true
-        //express: true
-        //mongo: true
-        //mongoose: true
       },
-      src:['models/**/*.js', 'server.js', 'routes/**/*.js']
+      src:['models/**/*.js', 'server.js', 'routes/**/*.js','test/**/*.js']
     },
 
     simplemocha: {

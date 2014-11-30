@@ -16,7 +16,6 @@ describe('basic avengers test', function(){
     .end(function(err, res){
       expect(err).to.eql(null);
       expect(res.body.msg).to.eql('avenger created');
-      //expect(res.body).to.have.property('_id');
       id = res.body._id;
       done();
     });
@@ -27,7 +26,7 @@ describe('basic avengers test', function(){
     .get('/avengers')
     .end(function(err,res){
       expect(err).to.eql(null);
-      expect(Array.isArray(res.body)).to.be.true;
+      expect(Array.isArray(res.body)).to.eql(true);
       done();
     });
   });

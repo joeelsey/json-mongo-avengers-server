@@ -7,15 +7,8 @@ module.exports = function(app) {
   }));
   app.use(bodyparser.json());
 
-  app.use(function(req, res, next) {
-    console.log('Its happening!');
-    next();
-  });
-
   app.get('/', function(req, res) {
-    res.json({
-      msg: 'this is my avengers api.'
-    });
+    res.json({ msg: 'this is my avengers api.' });
   });
 
   app.get('/avengers', function(req, res) {
@@ -38,9 +31,7 @@ module.exports = function(app) {
       avenger.name = req.body.name;
       avenger.save(function(err) {
         if (err) return res.status(500).send('error');
-        res.json({
-          msg: 'avenger updated'
-        });
+        res.json({ msg: 'avenger updated' });
       });
     });
   });
@@ -50,9 +41,7 @@ module.exports = function(app) {
       _id: req.params.avenger_id
     }, function(err, avenger) {
       if (err) return res.status(500).send('error');
-      res.json({
-        msg: 'avenger destroyed'
-      });
+      res.json({ msg: 'avenger destroyed' });
     });
   });
 
@@ -61,9 +50,7 @@ module.exports = function(app) {
     avenger.name = req.body.name;
     avenger.save(function(err) {
       if (err) return res.status(500).send('error');
-      res.json({
-        msg: 'avenger created'
-      });
+      res.json({ msg: 'avenger created' });
     });
   });
 
