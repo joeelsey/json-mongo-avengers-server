@@ -4,7 +4,8 @@ var validator = require('validator');
 
 //Program seems to work despite validation being wrong.
 function validation(val) {
-  if (typeof(val) == 'number') return val;
+  if (typeof(val) === 'number') return true;
+  return false;
 }
 var custom = [validation, 'Not a string.'];
 var avengerSchema = mongoose.Schema({
